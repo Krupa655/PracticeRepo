@@ -1,0 +1,247 @@
+﻿/* general  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+/* Background */
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background: #161316;
+}
+
+
+/* Main layout */
+
+.page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    background: radial-gradient( circle at 30% 50%, #453027, #161316 70% );
+}
+
+/* Lamp */
+
+.lamp-area {
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+
+/* Lamp shade */
+
+.lamp-shade {
+    position: absolute;
+    top: 80px;
+    left: 60px;
+    width: 160px;
+    height: 85px;
+    background: white;
+    border-radius: 90px 90px 20px 20px;
+    transition: .5s;
+}
+
+/* Bulb */
+
+.bulb {
+    position: absolute;
+    width: 50px;
+    height: 35px;
+    background: white;
+    bottom: -10px;
+    left: 55px;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+/* Lamp stand */
+
+
+.lamp-stand {
+    position: absolute;
+    top: 165px;
+    left: 135px;
+    width: 8px;
+    height: 150px;
+    background: white;
+}
+
+/* Lamp base */
+
+
+.lamp-base {
+    position: absolute;
+    top: 310px;
+    left: 80px;
+    width: 120px;
+    height: 18px;
+    background: white;
+    border-radius: 20px;
+}
+
+/* Pull string */
+
+.string-area {
+    position: absolute;
+    top: 165px;
+    left: 185px;
+    cursor: pointer;
+    z-index: 20;
+    transition: 0.25s ease;
+}
+
+.string {
+    width: 2px;
+    height: 70px;
+    background: #BABABA;
+}
+
+.pull-ball {
+    width: 20px;
+    height: 20px;
+    background: #FF6D29;
+    border-radius: 50%;
+    cursor: grab;
+    margin-left: -9px;
+}
+
+
+/* Pull instruction box */
+
+.pull-text {
+    position: absolute;
+    left: 35px;
+    bottom: -10px;
+    width: 130px;
+    padding: 10px 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid #BABABA;
+    border-radius: 15px;
+    background: rgba(69,48,39,0.6);
+    backdrop-filter: blur(8px);
+    transition: 0.5s;
+}
+
+/* Login Card  */
+
+.login-card {
+    width: 380px;
+    padding: 40px;
+    border-radius: 25px;
+    background: rgba(69,48,39,.55);
+    backdrop-filter: blur(15px);
+    color: white;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: 1s;
+}
+    /* Show login */
+
+
+    .login-card.show {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .login-card h1 {
+        text-align: center;
+        font-size: 35px;
+    }
+
+    .login-card span {
+        color: #FF6D29;
+    }
+
+    .login-card p {
+        text-align: center;
+        color: #BABABA;
+        margin: 20px 0;
+    }
+
+/* Buttons */
+
+.login-btn,
+.signup-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+/* Login button */
+
+.login-btn {
+    background: #FF6D29;
+    color: white;
+}
+
+/* Signup button */
+
+.signup-btn {
+    background: white;
+    color: #161316;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    color: #BABABA;
+}
+
+    .divider span {
+        height: 1px;
+        background: #BABABA;
+        flex: 1;
+    }
+
+.guest-btn {
+    width: 100%;
+    background: transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid #FF6D29;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/*  Lamp glowing */
+
+.page.light {
+    background: radial-gradient( circle at 30% 50%, rgba(255,109,41,.45), #161316 70% );
+}
+
+    /* Lamp orange glow */
+
+
+    .page.light .lamp-shade {
+        background: #FF6D29;
+        box-shadow: 0 0 40px #FF6D29, 0 0 100px #FF6D29;
+    }
+
+    /* Bulb glowing */
+
+    .page.light .bulb {
+        background: white;
+        box-shadow: 0 0 40px white, 0 0 120px #FF6D29;
+    }
+
+    /* Hide instruction after lamp turns on */
+    .page.light .pull-text {
+        opacity: 0;
+        transition: 0.5s;
+    }
